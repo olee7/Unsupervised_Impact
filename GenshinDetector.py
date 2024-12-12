@@ -25,8 +25,8 @@ train_dataset = datasets.ImageFolder(root=data_dir, transform=transform)
 train_dataset_cropped = datasets.ImageFolder(root=data_dir_cropped, transform=transform)
 train_dataset_expanded = datasets.ImageFolder(root=data_dir_expanded, transform=transform)
 
-# combined_dataset = ConcatDataset([train_dataset_cropped, train_dataset_expanded])
-combined_dataset = ConcatDataset([train_dataset])
+combined_dataset = ConcatDataset([train_dataset_cropped, train_dataset_expanded])
+# combined_dataset = ConcatDataset([train_dataset])
 
 train_loader = DataLoader(combined_dataset, batch_size=5, shuffle=True, num_workers=4)
 
